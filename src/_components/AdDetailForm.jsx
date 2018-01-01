@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
 
-export default class AdDetailForm extends React.Component {
+export class AdDetailForm extends React.Component {
     constructor(props) {
         super(props);
 
