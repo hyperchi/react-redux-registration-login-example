@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
+import AdDetailForm from '../_components/AdDetailForm.jsx';
 
 class Home extends React.Component {
     componentDidMount() {
@@ -20,6 +21,7 @@ class Home extends React.Component {
                 <h3>Hi {user.firstName}!</h3>
                 <p>You're logged in with React!!</p>
                 <h3>Buying ads</h3>
+                <AdDetailForm />
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
