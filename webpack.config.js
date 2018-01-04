@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -8,7 +9,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     },
     module: {
         loaders: [
@@ -19,7 +20,19 @@ module.exports = {
                 query: {
                     presets: ['react', 'es2015', 'stage-3']
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader'
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: 'file-loader'
+            },
         ]
     },
     plugins: [new HtmlWebpackPlugin({
@@ -30,4 +43,4 @@ module.exports = {
     devServer: {
         historyApiFallback: true
     }
-}
+};
